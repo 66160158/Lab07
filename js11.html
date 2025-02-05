@@ -1,0 +1,44 @@
+<!-- ตัวอย่างที่ 11: ปุ่มเปลี่ยนสี (Color Changing Button) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ตัวอย่างที่ 11</title>
+</head>
+<body>
+    <div id="example11">
+        <h3>11. ปุ่มเปลี่ยนสี</h3>
+        <button onclick="changeColor()">เปลี่ยนสี</button>
+        <div id="colorBox" class="color-box"></div>
+    </div>
+
+    <style>
+        .color-box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            margin: 10px 0;
+        }
+    </style>
+
+    <script>
+        // ฟังก์ชันสุ่มค่าสี RGB
+        function getRandomColor() {
+            // สุ่มค่า RGB แต่ละค่าจากช่วง 0-255
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return `rgb(${r},${g},${b})`;
+        }
+
+        // ฟังก์ชันเปลี่ยนสี
+        function changeColor() {
+            // หา element ตาม ID
+            const box = document.getElementById("colorBox");
+            // เปลี่ยนพื้นหลังเป็นสีสุ่ม
+            box.style.backgroundColor = getRandomColor();
+        }
+    </script>
+</body>
+</html>
